@@ -1,0 +1,470 @@
+@charset "utf-8";
+
+
+.neiyebanner{
+	background-size: cover;
+	width: 100%;
+	height: 500px;
+	position: relative;
+}
+.neiyebanner_ab{
+	background-size: cover;
+	width: 100%;
+	height: 750px;
+	position: relative;
+}
+.neiyebanner02 img{
+	width: 100%;
+}
+
+.zuixin_zixun{
+	    padding: 80px 200px;
+    overflow: hidden;
+}
+
+.nynews_list{
+	overflow: hidden;
+}
+.nynews_list li{
+	width: 33.32%;
+	margin-bottom: 35px;
+}
+
+.nynews_list li .pic {
+    width: 100%;
+}
+.nynews_list li .pic img {
+    width: 100%;
+}
+.nynews_list li .wen{
+	padding: 35px;
+	background: #f5f5f5;
+}
+.nynews_list li .wen p{
+	font-size: 1.7em;
+	padding-bottom: 30px;
+	color: #000;
+}
+.nynews_list li .wen span{
+	font-size: 1em;
+	line-height: 1.5em;
+	color: #777;
+}
+.newstitle{
+	color: #fff;
+	width: 80%;
+	margin: 0 auto;
+}
+.newstitle02{
+	position: absolute;
+	bottom: 0;
+	padding: 60px 0;
+}
+.newstitle02 span{
+	font-size: 0.85em;
+	text-transform: uppercase;
+}
+.newstitle02 p{
+	font-size: 2.5em;
+}
+.newscon{
+	font-size: 1.1em;
+	line-height:2em;
+	font-family: pingfangxiti;
+}
+.newscon img{
+	max-width: 100%;
+}
+
+.caizhicon{
+	font-size: 1.2em;
+	line-height:2em;
+	font-family: pingfangxiti;
+}
+.caizhicon h2{
+	font-size: 2.3em;
+	text-align: center;
+	padding-bottom: 20px;
+}
+.caizhicon img{
+	max-width: 100%;
+}
+
+.d_page {
+	width: 100%;
+	text-align: center;
+	margin: 70px 0;
+}
+.d_page a {
+	display: inline-block;
+	width: 150px;
+	height: 35px;
+	line-height: 35px;
+	border: 1px solid #dbdbdb;
+	border-radius: 50px;
+	font-size: 14px;
+	color: #666;
+}
+.d_page a:hover {
+	background: #019d9a;
+	color: #fff;
+}
+
+
+
+
+.pages {
+	margin: 60px 0;
+	width: 100%;
+}
+.pages .pagination {
+	width: 100%;
+	text-align: center!important;
+	display: block;
+}
+.pages .pagination li {
+	display: inline-block;
+	border: 1px solid #dbdbdb;
+	border-radius: 100%;
+	margin: 0 2px;
+}
+.pages .pagination li.active {
+	background: #019d9a;
+	border: 1px solid #019d9a;
+}
+.pages .pagination li.active a {
+	color: #fff;
+}
+.pages .pagination li a {
+	display: block;
+	height: 35px;
+	line-height: 35px;
+	font-size: 14px;
+	color: #888;
+	width: 35px;
+}
+
+
+
+.contact-tit {
+	position: relative;
+	font-size: 24px;
+	color: #333;
+	padding-bottom: 20px;
+	margin-bottom: 30px;
+}
+.contact-content {
+	margin-bottom: 40px;
+	padding-bottom: 35px;
+	border-bottom: 1px solid #ddd;
+}
+.contact-content .qr-list li {
+	float: left;
+	text-align: center;
+	margin-left: 35px;
+	line-height: 2em;
+}
+.contact-content .left p {
+	font-size: 0.85em;
+	color: #818181;
+}
+.qr-list li p{
+	font-size: 0.85em;
+	color: #818181;
+}
+.contact-content .left .hotline {
+	font-family: Constantia, Lucida Bright, DejaVu Serif, Georgia, serif;
+	color: #019d9a;
+	font-size: 35px;
+}
+.com-hotline {
+	color: #019d9a;
+	font-size: 46px;
+	font-family: fantasy;
+	line-height: 1;
+}
+.contact-content .left p em {
+	color: #333;
+}
+.contact-content .left .tit {
+
+}
+.contact-content .left .des {
+	margin-top: 10px;
+	line-height: 2.6;
+}
+.contact-tit:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 30px;
+	border-bottom: 3px solid #333;
+}
+.zzliuyan {
+	width: 100%;
+	margin-bottom: 70px;
+}
+.lylist {
+	width: 100%;
+}
+.lylist input, .lylist textarea, .lylist button {
+	border-radius: 5px;
+	border: none;
+	font-size: 14px;
+}
+.lylist .lytitle {
+	width: 99%;
+	height: 52px;
+	line-height: 52px;
+	padding: 0 0 0 30px;
+	background: #f5f5f5;
+}
+.lylist .inp_name {
+	width: 48%;
+	height: 52px;
+	line-height: 52px;
+	padding: 0 0 0 30px;
+	margin: 20px 0px 0 0;
+	background: #f5f5f5;
+}
+.lylist .inp_tel {
+	width: 48%;
+	height: 52px;
+	line-height: 52px;
+	padding: 0 0 0 30px;
+	float: right;
+	margin: 20px 13px 0 0;
+	background: #f5f5f5;
+}
+.lylist .inp_neirong {
+	width: 99%;
+	height: 200px;
+	line-height: 35px;
+	padding: 0 0 0 30px;
+	margin: 20px 0px 0 0;
+	background: #f5f5f5;
+}
+.lylist .vcode {
+	width: 200px;
+	height: 52px;
+	line-height: 52px;
+	padding: 0 0 0 30px;
+	margin: 20px 0px 0 0;
+	background: #f5f5f5;
+}
+.lylist .submit {
+	width: 99%;
+	text-align: center;
+	background: #019d9a;
+	height: 52px;
+	line-height: 52px;
+	color: #fff;
+	margin: 20px 0px 0 0;
+	font-size: 16px;
+}
+.lylist .submit:hover {
+	cursor: pointer;
+}
+.lylist img{
+	margin: 30px 0 0 5px;
+}
+.contact_main {
+	padding: 40px 30px 30px 30px;
+	border-top: 1px #f1f1f1 solid;
+	font-size: 16px;
+	line-height: 33px;
+	color: #666;
+	min-height: 300px;
+}
+.qr-list{
+	display: block;
+}
+
+
+
+@media screen and (max-width: 1680px) {
+	.zuixin_zixun {
+    padding:70px;
+
+}
+	
+}
+
+
+@media screen and (max-width: 1560px){
+	.newscon img{
+		width: 100%;
+	}
+	.caizhicon img{
+		width: 100%;
+	}
+	.newscon img.da50 {
+    width: auto!important;
+}
+
+}
+
+@media screen and (max-width: 1380px) {
+
+	.zuixin_zixun {
+    padding:40px 20px;
+
+}
+}
+
+@media screen and (max-width: 1260px){
+	.nynews_list li .wen {
+    padding: 25px;
+    background: #f5f5f5;
+		height: 160px;
+}
+	.nynews_list li .wen p {
+    font-size: 1.2em;
+    padding-bottom: 20px;
+    color: #000;
+		white-space:nowrap; 
+overflow:hidden; 
+text-overflow:ellipsis;
+		width: 98%;
+}
+	.pages {
+    margin: 30px 0;
+    width: 100%;
+}
+} 
+
+@media screen and (max-width: 992px){
+	.neiyebanner {
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
+	.neiyebanner_ab {
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
+	
+	.neiyebanner02{
+		height: 500px;
+		background-size: cover;
+		background-position: center top;
+	}
+	.neiyebanner02 img{
+		display: none;
+	}
+	
+}
+@media screen and (max-width:860px){
+	.nynews_list li {
+    width: 50%;
+		margin-bottom: 25px;
+}
+	.nynews_list li .wen {
+    padding: 18px;
+    background: #f5f5f5;
+    height: 120px;
+}
+	.nynews_list li .wen p {
+    padding-bottom: 15px;
+}
+	
+	.newscon img{
+		width: 100%;
+	}
+
+	.caizhicon img{
+		width: 100%;
+	}
+	.newstitle02 {
+    position: absolute;
+    bottom: 0;
+    padding: 30px 0;
+}
+	.newstitle02 p {
+    font-size: 1.5em;
+}
+	.newstitle{
+		width: auto;
+		padding: 0 30px;
+	}
+}
+@media screen and (max-width: 680px){
+	.nynews_list li {
+    width: 100%;
+		margin-bottom: 25px;
+}
+	.nynews_list li .wen p {
+    font-size: 1.5em;
+    padding-bottom: 20px;
+    color: #000;
+    white-space:normal;
+    overflow:inherit;
+    text-overflow:inherit;
+    width: auto;
+}
+	.nynews_list li .wen {
+    padding: 18px;
+    background: #f5f5f5;
+    height: auto;
+}
+	.neiyebanner {
+    background-size: cover;	
+    width: 100%;
+    height: 220px;
+}
+	.neiyebanner_ab {
+    background-size: cover;	
+    width: 100%;
+    height: 220px;
+}
+	.qr-list {
+    display: block;
+    width: 100%;
+		margin-top: 30px;
+}
+	.contact-content .qr-list li {
+    float: left;
+    text-align: center;
+    margin-left: 0;
+    line-height: 2em;
+		margin-right: 20px;
+}
+	
+	.lylist .inp_tel,.lylist .inp_name{
+		width: 99%;
+		float: none;
+	}
+	.ftlogo img {
+    height: 45px;
+}
+}
+
+
+.newscon02 h2{
+	font-weight: 700;
+}
+.newscon02 h2 span{
+	padding: 10px;
+}
+.newscon02 h3{
+	background: url("../image/h3bj.jpg") no-repeat center bottom;
+padding-bottom: 27px;
+}
+.newscon02 hr{
+	border-top: 1px solid #ffca00;
+	margin: 50px auto;
+	width: 640px;
+}
+
+@media screen and (min-width: 641px){
+	.newscon02 img{
+		max-width: 640px;
+	}
+}
+@media screen and (max-width: 640px){
+	.newscon02 img{
+		max-width: 100%;
+	}
+}
