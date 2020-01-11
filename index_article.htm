@@ -1,137 +1,488 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
-<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
-<meta name="keywords" content="{dede:field name='keywords'/}" />
-<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
-<link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
-<meta http-equiv="mobile-agent" content="format=xhtml;url={dede:global.cfg_mobileurl/}/list.php?tid={dede:field.id/}">
-<script type="text/javascript">if(window.location.toString().indexOf('pref=padindex') != -1){}else{if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){if(window.location.href.indexOf("?mobile")<0){try{if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){window.location.href="{dede:global.cfg_mobileurl/}/list.php?tid={dede:field.id/}";}else if(/iPad/i.test(navigator.userAgent)){}else{}}catch(e){}}}}</script>
-</head>
-<body class="channel">
-{dede:include filename="head.htm"/}
-<!-- /header -->
-<div class="w960 center clear mt1">
- <div class="pleft">
-  <div class="flashnews">
-   <script language='javascript'>
-linkarr = new Array();
-picarr = new Array();
-textarr = new Array();
-var swf_width=280;
-var swf_height=192;
-var files = "";
-var links = "";
-var texts = "";
-//这里设置调用标记
-{dede:arclist flag='f' row='5'}
-linkarr[[field:global.autoindex/]] = "[field:arcurl/]";
-picarr[[field:global.autoindex/]]  = "[field:litpic/]";
-textarr[[field:global.autoindex/]] = "[field:title function='html2text(@me)'/]";
-{/dede:arclist}
-for(i=1;i<picarr.length;i++){
-  if(files=="") files = picarr[i];
-  else files += "|"+picarr[i];
-}
-for(i=1;i<linkarr.length;i++){
-  if(links=="") links = linkarr[i];
-  else links += "|"+linkarr[i];
-}
-for(i=1;i<textarr.length;i++){
-  if(texts=="") texts = textarr[i];
-  else texts += "|"+textarr[i];
-}
-document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ swf_width +'" height="'+ swf_height +'">');
-document.write('<param name="movie" value="{dede:global.cfg_templets_skin/}/images/bcastr3.swf"><param name="quality" value="high">');
-document.write('<param name="menu" value="false"><param name=wmode value="opaque">');
-document.write('<param name="FlashVars" value="bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'">');
-document.write('<embed src="{dede:global.cfg_templets_skin/}/images/bcastr3.swf" wmode="opaque" FlashVars="bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'& menu="false" quality="high" width="'+ swf_width +'" height="'+ swf_height +'" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />'); document.write('</object>');
+<!doctype html>
+<html lang="zh-CN"><head>
+<!-- Required meta tags -->
+
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>产品高端定制-轻奢简约品牌-富沃斯</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link href="static/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="static/css/swiper.min.css">
+<link rel="stylesheet" href="static/css/owl.carousel.min.css">
+<link rel="stylesheet" href="static/css/reset.css">
+<link rel="stylesheet" href="static/css/cp_head.css">
+<link rel="stylesheet" href="static/css/index.css">
+<link rel="stylesheet" href="static/css/neiye.css">
+<script type="text/javascript" src="static/js/jquery.min.js"></script>
+<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+<script src="static/js/owl.carousel.min.js"></script>
+<link href="static/css/animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="static/js/wow.min.js"></script>
+<script type="text/javascript">
+	 new WOW().init();
 </script>
-  </div>
-  <!-- /flashnews -->
-  <div class="topcommand">
-   <dl class="tbox">
-    <dt><strong>频道头条</strong></dt>
-    <dd>
-     <div class="onenews"> {dede:arclist flag='h' limit='0,1'}
-      <h2><a href="[field:arcurl/]">[field:title/]</a></h2>
-      <p>[field:description function='cn_substr(@me,110)'/]...<a href="[field:arcurl/]">[查看全文]</a></p>
-      {/dede:arclist} </div>
-     <!-- /onenews -->
-     <ul class="c2 ico1">
-      {dede:arclist flag='h' limit='1,6'}
-      <li><a href="[field:arcurl/]">[field:title/]</a></li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-   </dl>
-  </div>
-  <!-- /topcommand -->
-  <div class="picnews mt1">
-   <dl class="tbox">
-    <dt><strong>图文资讯</strong></dt>
-    <dd>
-     <ul class="e1">
-      {dede:arclist row=5 orderby=pubdate type='image.' imgwidth='124' imgheight='94'}
-      <li><a href="[field:arcurl/]">[field:image/]<span class="title">[field:title/]</span></a></li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-   </dl>
-  </div>
-  <!-- /picnews -->
-  <div class="listbox"> {dede:channelartlist}
-   <dl class="tbox">
-    <dt><strong><a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a></strong><span class="more"><a href="{dede:field name='typeurl'/}">更多...</a></span></dt>
-    <dd>
-     <ul class="d1 ico3">
-      {dede:arclist titlelen='60' row='8'}
-      <li><span class="date">[field:pubdate function="MyDate('m-d',@me)"/]</span><a href="[field:arcurl /]">[field:title /]</a></li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-   </dl>
-   {/dede:channelartlist} </div>
-  <!-- /listbox -->
- </div>
- <!-- /pleft -->
- <div class="pright">
-  <div class="commend">
-   <dl class="tbox light">
-    <dt class='light'><strong>推荐内容</strong></dt>
-    <dd class='light'>
-     <ul class="d4">
-      {dede:arclist flag='c' titlelen=42 row=6}
-      <li><a href="[field:arcurl/]">[field:title/]</a>
-       <p>[field:description function='cn_substr(@me,80)'/]...</p>
-      </li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-   </dl>
-  </div>
-  <!-- /commend -->
-  <div id="conrightAD" style="margin:10px auto">{dede:mda name='250x250_SSP'/}</div>
-  <div class="hot mt1">
-   <dl class="tbox light">
-    <dt class='light'><strong>热点内容</strong></dt>
-    <dd class='light'>
-     <ul class="c1 ico2">
-      {dede:arclist row=10 orderby=click}
-      <li><a href="[field:arcurl/]">[field:title/]</a></li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-   </dl>
-  </div>
-  <div id="listRtPicAD2" style="margin:10px auto">{dede:mda name='250x250'/}</div>
-  {dede:qrcode/}
- </div>
- <!-- /pright -->
+</head>
+<body style="background: #f5f5f5;">
+
+<!-- 导航 -->
+	<header class="header02"> 
+		<div class="h_toubu clearfix"> 
+			<div class="h_logo02 fl">
+				<a href="index.html" title="富沃斯"><img src="static/picture/logo2.png" alt="富沃斯"></a>
+			</div>
+			<div class="fr nav nav03">
+				<ul class="navbar_nav" data-in="fadeInDown" data-out="fadeOutUp">
+					<li class=" dropdown">
+						<a href="">产品</a>
+					</li>
+					<li class=" ">
+						<a href="javascript:;" target="_blank">空间案例</a>						
+					</li>
+					<li class=" ">
+						<a href="45.html">材质汇</a>
+					</li>
+					<li class=" ">
+						<a href="aboutus.html">品牌故事</a>						
+					</li>
+					<li class=" ">
+						<a href="contact.html">联系我们</a>						
+					</li>
+					<li class=" ">
+						<a href="javascript:;" target="_blank">购买</a>						
+					</li>
+				</ul>
+			</div>
+			<a href="javascript:void(0)" id="navToggle"><span></span></a>
+		</div>
+	</header>
+	<!--移动端的导航-->
+	<div class="m_nav">
+		<div class="top clearfix">
+			<img src="static/picture/closed.png" alt="关闭" class="closed">
+		</div>
+		<div class="logo">
+			<img src="static/picture/logo2.png" alt="富沃斯">
+		</div>
+		<ul class="ul" data-in="fadeInDown" data-out="fadeOutUp">
+						<li class="dropdown">
+				<a href="javascript:void(0)">产品</a>
+										<div class="dropdown_menu">
+											<a href="sf.html">沙发</a>
+											<a href="xiuxianyi.html">休闲椅</a>
+											<a href="chaji.html">茶几</a>
+											<a href="canzhuo.html">餐桌</a>
+											<a href="canyi.html">餐椅</a>
+											<a href="chuang.html">床</a>
+											<a href="chuangtougui.html">床头柜</a>
+											<a href="guilei.html">柜类</a>
+										</div>
+									</li>
+						<li class="">
+				<a href="javascript:;" target="_blank">空间案例</a>
+							</li>
+						<li class="">
+				<a href="45.html">材质汇</a>
+							</li>
+						<li class="">
+				<a href="aboutus.html">品牌故事</a>
+							</li>
+						<li class="">
+				<a href="contact.html">联系我们</a>
+							</li>
+						<li class="">
+				<a href="javascript:;" target="_blank">购买</a>
+							</li>
+						
+		</ul>
+	</div>
+
+
+<script>
+		$(function(){
+			//超过一定高度导航添加类名
+			var nav=$("header"); //得到导航对象  
+			var win=$(window); //得到窗口对象  
+			var sc=$(document);//得到document文档对象。  
+			win.scroll(function(){  
+			  if(sc.scrollTop()>=100){  
+			    nav.addClass("on");   
+			  }else{  
+			   nav.removeClass("on");  
+			  }  
+			})   
+
+			//移动端展开nav
+			$('#navToggle').on('click',function(){
+				$('.m_nav').addClass('open');
+			})
+			//关闭nav
+			$('.m_nav .top .closed').on('click',function(){
+				$('.m_nav').removeClass('open');
+			})
+			
+			//二级导航  移动端
+		    $(".m_nav .ul li").click(function() {
+				$(this).children("div.dropdown_menu").slideToggle('slow')
+		        $(this).siblings('li').children('.dropdown_menu').slideUp('slow');				
+		    });
+
+		})
+</script>
+<!-- 导航结束 -->
+
+
+	<div class="product_list">
+	   <div class="fl zcfenlei">
+			<div class="search">
+			  <form method="post" action="http://www.fuwos.com/product" onsubmit="return top_search();">
+					<input name="keywords" value="" id="top-keywords" type="text" class="input" placeholder="寻找">
+					<input name="" type="submit" class="btn" value="">
+				</form>
+			</div>
+			<div class="fenleilist">
+				<ul>
+				    <li><a href="sf.html" title="沙发">沙发</a></li>
+			        <li><a href="xiuxianyi.html" title="休闲椅">休闲椅</a></li>
+			        <li><a href="chaji.html" title="茶几">茶几</a></li>
+			        <li><a href="canzhuo.html" title="餐桌">餐桌</a></li>
+			        <li><a href="canyi.html" title="餐椅">餐椅</a></li>
+			        <li><a href="chuang.html" title="床">床</a></li>
+			        <li><a href="chuangtougui.html" title="床头柜">床头柜</a></li>
+			        <li><a href="guilei.html" title="柜类">柜类</a></li>
+	    		</ul>
+			</div>
+			<div class="fenleilist_sj fenleilist_sj02">
+				<div class="anzhankai">
+					<span>产品系列</span>
+					<i>
+						<svg t="1561729353339" class="icon" viewbox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2968" width="20" height="20">
+							<path d="M861.26666667 358.8L548.56666667 676.3c-20.6 20.9-53.9 20.9-74.5 0L161.26666667 358.7c-20.6-20.9-53.9-20.9-74.5 0s-20.6 54.7 0 75.6l350.09999999 355.4 37.30000001 37.8c20.6 20.9 53.9 20.9 74.5 0l387.3-393.2c20.6-20.9 20.6-54.7 0-75.60000001-20.7-20.8-54.1-20.8-74.7 0.10000001z" p-id="2969">
+							</path>
+						</svg>
+					</i>
+				</div>
+				<div class="cpxilie">
+				   <a href="sf.html" title="沙发">沙发</a>
+			       <a href="xiuxianyi.html" title="休闲椅">休闲椅</a>
+			       <a href="chaji.html" title="茶几">茶几</a>
+			       <a href="canzhuo.html" title="餐桌">餐桌</a>
+			       <a href="canyi.html" title="餐椅">餐椅</a>
+			       <a href="chuang.html" title="床">床</a>
+			       <a href="chuangtougui.html" title="床头柜">床头柜</a>
+			       <a href="guilei.html" title="柜类">柜类</a>
+		    	</div>		
+			</div>
+	</div>
+
+<script>
+	$(function(){
+		$(".anzhankai").click(function(){ 
+	      if($(".cpxilie").hasClass("cpxilie02"))
+	        $(".cpxilie").removeClass("cpxilie02");
+	      else
+	        $(".cpxilie").addClass("cpxilie02");
+	 		});
+	});
+</script>
+
+
+
+		<div class="fr ycliebiao">
+			<div class="zhudapro wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s">
+			  <a href="99.html" target="_blank">
+				<div class="xp_pic left col-lg-8 col-md-8 col-sm-8 col-xs-4"><img src="static/picture/c9415abb067c9390.jpg" alt="拼花"></div>
+				<div class="xp_wen left col-lg-4 col-md-4 col-sm-4 col-xs-8">
+					<div class="xp_wen02">
+					<div class="pinapi">parquet</div>
+					<div class="title">拼花&nbsp;<span>茶几</span></div>
+						<div class="note">
+							<pre>纯天然的贴面花纹，赋予茶几独特的设计感，令它成为家居空间的点睛之笔。</pre>
+					        <div class="chicun"><span>尺寸：</span><font>φ1200/φ1000*380</font></div>							<div class="caizhi"><span>材质：</span><font>胡桃木皮饰面+白橡木腿</font></div>							</div>
+					<div class="liaojie"><p>了解更多</p></div>
+						</div>
+				</div></a>
+			</div>      			<div class="promain">
+			 <ul>				 <li class="fl col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"><a href="114.html" target="_blank">
+					 <div class="pic">
+					 <img src="static/picture/cf367c36fc644623.jpg" alt="百特" class="pic01">
+					 <img src="static/picture/cf367c36fc644623.jpg" alt="百特" class="pic02">
+					 </div>
+					 <div class="wen">
+					 <div class="pinapi">baxter</div>
+					<div class="title">百特&nbsp;<span>电视柜</span></div>
+					 </div>
+					 </a></li>				 <li class="fl col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"><a href="113.html" target="_blank">
+					 <div class="pic">
+					 <img src="static/picture/8dd00b44eba660b6.jpg" alt="小筑" class="pic01">
+					 <img src="static/picture/8dd00b44eba660b6.jpg" alt="小筑" class="pic02">
+					 </div>
+					 <div class="wen">
+					 <div class="pinapi">build</div>
+					<div class="title">小筑&nbsp;<span>边几</span></div>
+					 </div>
+					 </a></li>				 <li class="fl col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"><a href="112.html" target="_blank">
+					 <div class="pic">
+					 <img src="static/picture/da073e9a6694697d.jpg" alt="酒杯" class="pic01">
+					 <img src="static/picture/da073e9a6694697d.jpg" alt="酒杯" class="pic02">
+					 </div>
+					 <div class="wen">
+					 <div class="pinapi">Goblet</div>
+					<div class="title">酒杯&nbsp;<span>茶几</span></div>
+					 </div>
+					 </a></li>				 <li class="fl col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"><a href="111.html" target="_blank">
+					 <div class="pic">
+					 <img src="static/picture/41733bb79b98ef9c.jpg" alt="凤足" class="pic01">
+					 <img src="static/picture/41733bb79b98ef9c.jpg" alt="凤足" class="pic02">
+					 </div>
+					 <div class="wen">
+					 <div class="pinapi">Phoenix</div>
+					<div class="title">凤足&nbsp;<span>茶几</span></div>
+					 </div>
+					 </a></li>				 <li class="fl col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"><a href="110.html" target="_blank">
+					 <div class="pic">
+					 <img src="static/picture/dfe3b54df843da7b.jpg" alt="树枝" class="pic01">
+					 <img src="static/picture/dfe3b54df843da7b.jpg" alt="树枝" class="pic02">
+					 </div>
+					 <div class="wen">
+					 <div class="pinapi">BRANCH</div>
+					<div class="title">树枝&nbsp;<span>茶几</span></div>
+					 </div>
+					 </a></li>				 <li class="fl col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"><a href="109.html" target="_blank">
+					 <div class="pic">
+					 <img src="static/picture/55930b87e78571e2.jpg" alt="索里" class="pic01">
+					 <img src="static/picture/55930b87e78571e2.jpg" alt="索里" class="pic02">
+					 </div>
+					 <div class="wen">
+					 <div class="pinapi">SOORI</div>
+					<div class="title">索里&nbsp;<span>小几</span></div>
+					 </div>
+					 </a></li>				 <li class="fl col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"><a href="108.html" target="_blank">
+					 <div class="pic">
+					 <img src="static/picture/84d468d0a98926cb.jpg" alt="达玛" class="pic01">
+					 <img src="static/picture/84d468d0a98926cb.jpg" alt="达玛" class="pic02">
+					 </div>
+					 <div class="wen">
+					 <div class="pinapi">DAMA</div>
+					<div class="title">达玛&nbsp;<span>茶几</span></div>
+					 </div>
+					 </a></li>				 <li class="fl col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"><a href="107.html" target="_blank">
+					 <div class="pic">
+					 <img src="static/picture/630e4bead57d9158.jpg" alt="恩佐" class="pic01">
+					 <img src="static/picture/630e4bead57d9158.jpg" alt="恩佐" class="pic02">
+					 </div>
+					 <div class="wen">
+					 <div class="pinapi">ENZO</div>
+					<div class="title">恩佐&nbsp;<span>茶几</span></div>
+					 </div>
+					 </a></li>				 <li class="fl col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"><a href="106.html" target="_blank">
+					 <div class="pic">
+					 <img src="static/picture/0d114bcdc2ec87c3.jpg" alt="安娜" class="pic01">
+					 <img src="static/picture/0d114bcdc2ec87c3.jpg" alt="安娜" class="pic02">
+					 </div>
+					 <div class="wen">
+					 <div class="pinapi">ANNA</div>
+					<div class="title">安娜&nbsp;<span>边几</span></div>
+					 </div>
+					 </a></li>				 <li class="fl col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"><a href="105.html" target="_blank">
+					 <div class="pic">
+					 <img src="static/picture/d63a7c0c29251815.jpg" alt="卡洛" class="pic01">
+					 <img src="static/picture/d63a7c0c29251815.jpg" alt="卡洛" class="pic02">
+					 </div>
+					 <div class="wen">
+					 <div class="pinapi">CARLO</div>
+					<div class="title">卡洛&nbsp;<span>茶几</span></div>
+					 </div>
+					 </a></li>				 <li class="fl col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"><a href="104.html" target="_blank">
+					 <div class="pic">
+					 <img src="static/picture/1ad1224dda3fd6e2.jpg" alt="飞翔" class="pic01">
+					 <img src="static/picture/1ad1224dda3fd6e2.jpg" alt="飞翔" class="pic02">
+					 </div>
+					 <div class="wen">
+					 <div class="pinapi">FLY</div>
+					<div class="title">飞翔&nbsp;<span>边几</span></div>
+					 </div>
+					 </a></li>				 <li class="fl col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"><a href="103.html" target="_blank">
+					 <div class="pic">
+					 <img src="static/picture/ee939324352a6a23.jpg" alt="尼克" class="pic01">
+					 <img src="static/picture/ee939324352a6a23.jpg" alt="尼克" class="pic02">
+					 </div>
+					 <div class="wen">
+					 <div class="pinapi">NIK</div>
+					<div class="title">尼克&nbsp;<span>小几</span></div>
+					 </div>
+					 </a></li>				 <li class="fl col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"><a href="102.html" target="_blank">
+					 <div class="pic">
+					 <img src="static/picture/68b01a02caedde7d.jpg" alt="沃赛" class="pic01">
+					 <img src="static/picture/68b01a02caedde7d.jpg" alt="沃赛" class="pic02">
+					 </div>
+					 <div class="wen">
+					 <div class="pinapi">ORCI</div>
+					<div class="title">沃赛&nbsp;<span>茶几</span></div>
+					 </div>
+					 </a></li>				 <li class="fl col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"><a href="101.html" target="_blank">
+					 <div class="pic">
+					 <img src="static/picture/7233bdc38250d55b.jpg" alt="月影" class="pic01">
+					 <img src="static/picture/7233bdc38250d55b.jpg" alt="月影" class="pic02">
+					 </div>
+					 <div class="wen">
+					 <div class="pinapi">MOON</div>
+					<div class="title">月影&nbsp;<span>茶几</span></div>
+					 </div>
+					 </a></li>				 <li class="fl col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"><a href="100.html" target="_blank">
+					 <div class="pic">
+					 <img src="static/picture/86bbbddcc315cd9c.jpg" alt="蘑菇" class="pic01">
+					 <img src="static/picture/86bbbddcc315cd9c.jpg" alt="蘑菇" class="pic02">
+					 </div>
+					 <div class="wen">
+					 <div class="pinapi">agaric</div>
+					<div class="title">蘑菇&nbsp;<span>小几</span></div>
+					 </div>
+					 </a></li>				 <li class="fl col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"><a href="98.html" target="_blank">
+					 <div class="pic">
+					 <img src="static/picture/96bc9edf283be49f.jpg" alt="小筑" class="pic01">
+					 <img src="static/picture/96bc9edf283be49f.jpg" alt="小筑" class="pic02">
+					 </div>
+					 <div class="wen">
+					 <div class="pinapi">build</div>
+					<div class="title">小筑&nbsp;<span>床头柜</span></div>
+					 </div>
+					 </a></li>				 <li class="fl col-lg-4 col-md-6 col-sm-6 col-xs-6 wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="1s"><a href="97.html" target="_blank">
+					 <div class="pic">
+					 <img src="static/picture/90561e9148cd7a06.jpg" alt="里安" class="pic01">
+					 <img src="static/picture/90561e9148cd7a06.jpg" alt="里安" class="pic02">
+					 </div>
+					 <div class="wen">
+					 <div class="pinapi">LIAN</div>
+					<div class="title">里安&nbsp;<span>床头柜</span></div>
+					 </div>
+					 </a></li>
+					 </ul>
+			</div>
+
+<div class="pages">          
+    <ul class="pagination">
+		<li><a href="javascript:;void(0)"> < </a></li>
+		<li class="active"><a href="">1</a></li>
+		<li><a href="product-2.html">2</a></li>
+		<li><a href="product-3.html">3</a></li>
+		<li><a href="product-4.html">4</a></li>
+		<li><a href="product-2.html"> > </a></li>
+	</ul>    
 </div>
-<div id="footAD" style="margin:10px auto; width:726px">{dede:mda name='728x90'/}</div>
-{dede:include filename="footer.htm"/}
-<!-- /footer -->
+
+		</div>
+	</div>
+
+
+
+
+<!-- 列表页footer -->
+<div class="footer">
+	<div class="left">
+		<div class="ftlogo">
+			<a href="index.html" title="富沃斯"><img src="static/picture/logo.png" alt="富沃斯"></a>
+		</div>
+		<div class="ftwen">
+			<div class="ftnav">
+				<a href="">产品</a>
+				<a href="javascript:;" target="_blank">空间案例</a>
+				<a href="45.html">材质汇</a>
+				<a href="aboutus.html">品牌故事</a>
+				<a href="contact.html">联系我们</a>
+				<a href="javascript:;" target="_blank">购买</a>
+			</div>
+			<div class="ftbeian">© 2019   富沃斯 ALL RIGHTS RESERVED    <a href="javascript:;" rel="nofollow" target="_blank">粤ICP备19061432号-1</a></div>
+		</div>
+	</div>
+
+	<div class="right">
+		<div class="erweima right"><img src="static/picture/398eadaabf565fc2.jpg" alt="二维码"><i>微信公众号</i></div>
+		<div class="erweima right"><img src="static/picture/bcf042ea73f1849f.jpg" alt="二维码"><i>在线购买</i></div>
+	</div>
+</div>
+<!-- 列表页footer结束 -->
+
+
+<!--右侧客服-->
+<div class="cndns-right"> 
+    <div class="cndns-right-meau meau-contact"> <a href="javascript:" class="cndns-right-btn"> <span class="demo-icon icon-phone-circled">&#xe800;</span>
+    <p> 咨询热线 </p>
+    </a>
+    <div class="cndns-right-box">
+      <div class="box-border">
+        <div class="sev-t">
+        <span class="demo-icon icon-phone-circled">&#xe800;</span>
+          <p>0769-85821508<br>
+            <i>7*24小时服务热线</i></p>
+          <div class="clear"></div>
+        </div>
+        <span class="arrow-right"></span>
+        </div>
+    </div>
+  </div>
+   
+    <div class="cndns-right-meau meau-code"> <a href="javascript:" class="cndns-right-btn"> <span class="demo-icon icon-wechat">&#xf1d7;</span>
+    <p>关注微信</p>
+    </a>
+    <div class="cndns-right-box">
+      <div class="box-border">
+        <div class="sev-t"><img src="static/picture/398eadaabf565fc2.jpg" alt="二维码"><i>扫一扫添加微信</i></div>
+        <span class="arrow-right"></span> </div>
+    </div>
+  </div>
+  	  <div class="cndns-right-meau meau-code"> <a href="javascript:" class="cndns-right-btn"> <span class="demo-icon icon-menu">&#xf008;</span>
+    <p>在线购买</p>
+    </a>
+    <div class="cndns-right-box">
+      <div class="box-border">
+        <div class="sev-t"><img src="static/picture/bcf042ea73f1849f.jpg" alt="二维码"><i>淘宝扫描进店</i></div>
+        <span class="arrow-right"></span> </div>
+    </div>
+  </div>
+    <div class="cndns-right-meau meau-top" id="top-back"> <a href="javascript:" class="cndns-right-btn" onclick="topBack()"> <span class="demo-icon icon-up-open-big">&#xe818;</span> <i>返回顶部</i> </a> </div>
+</div>
+<link rel="stylesheet" href="static/css/zxkf.css">
+<script type="text/javascript">
+//置顶图标显示
+$('#top-back').hide()
+$(window).scroll(function(){
+	 if($(this).scrollTop() > 350){
+		$("#top-back").fadeIn();
+	 }
+	 else{
+		$("#top-back").fadeOut();
+	 }
+  })	
+//置顶事件
+function topBack(){
+  $('body,html').animate({scrollTop:0},300);
+}
+$('.cndns-right .cndns-right-btn:first').css({border:"none"});
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?6603495aa58914c94852c95c53510a42";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- 屏蔽键盘鼠标事件 -->
+
+	<script>  
+	console.log(document.getElementsByTagName('img'));  
+	var bodyimg = document.getElementsByTagName('img');
+	for(var i=0;i<=bodyimg.length;i++){
+	bodyimg[i].onmousedown = function(e){  
+	    e.preventDefault()  
+	};  
+	}
+</script>
 </body>
 </html>
